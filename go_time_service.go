@@ -25,7 +25,7 @@ func main() {
 	http.Handle("/", http.StripPrefix("/", fs))
 
 	http.HandleFunc("/api/", handler)
-	log.Fatal(http.ListenAndServe("localhost:"+port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
